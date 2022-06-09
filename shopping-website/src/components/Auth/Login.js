@@ -73,7 +73,7 @@ const Login = () => {
 
                     localStorage.setItem("user_login", JSON.stringify(userlogin))
 
-                    history("/details")
+                    history("/product")
                 }
             }
         }
@@ -101,7 +101,7 @@ const Login = () => {
                                 Submit
                             </Button>
                         </Form>
-                        <p className='mt-3'>Already Have an Account <span>SignIn</span> </p>
+                        <p className='mt-3'>Don't have an account <span>SignIn</span> </p>
                     </div>
                     <SIgn_img />
                 </section>

@@ -1,20 +1,23 @@
 import React from 'react'
-import Header from '../Auth/Header';
+import Header from '../Navbar/Header';
 import Home from '../Auth/Home';
 import Login from '../Auth/Login';
-import Details from '../Auth/Details';
 import Errror from '../Auth/Errror';
 import {Routes,Route} from "react-router-dom"
+import Navbar from '../Navbar/Navbar';
+import Product from '../product/Product';
 
 
 const Rout = () => {
   return (
     <>
-    <Header />
+    {/* <Navbar/> */}
     <Routes>
-      <Route path='/' element={<Home />} />
+    <Route path='/' element={<Header />} />
+
+      <Route path='/signup' element={<Home />} />
       <Route path='/login' element={<Login />} />
-      <Route path='/details' element={<Details />} />
+      <Route path='/product' element={<Product />} />
       <Route path='*' element={<Errror />} />
     </Routes>
   </>  )

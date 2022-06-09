@@ -53,8 +53,10 @@ const Details = () => {
             {
                 logindata.length === 0 ? "errror" :
                     <>
-                        <h1>{logindata[0].name}</h1>
+                    <div >
+                        <h3>{logindata[0].name}</h3>
                         <Button onClick={userlogout}>LogOut</Button>
+                        </div>
 
                 {
                     logindata[0].date === todayDate ? 
