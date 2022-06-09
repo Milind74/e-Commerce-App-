@@ -5,7 +5,9 @@ import Login from '../Auth/Login';
 import Errror from '../Auth/Errror';
 import {Routes,Route} from "react-router-dom"
 import Navbar from '../Navbar/Navbar';
+import Products from '../product/Products';
 import Product from '../product/Product';
+
 
 
 const Rout = () => {
@@ -17,7 +19,10 @@ const Rout = () => {
 
       <Route path='/signup' element={<Home />} />
       <Route path='/login' element={<Login />} />
-      <Route path='/product' element={<Product />} />
+      <Route path='/products' element={<Products/>} />
+      <Route path='/products/:id' element={<Product/>} />
+
+
       <Route path='*' element={<Errror />} />
     </Routes>
   </>  )

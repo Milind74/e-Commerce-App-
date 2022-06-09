@@ -73,7 +73,7 @@ const Login = () => {
 
                     localStorage.setItem("user_login", JSON.stringify(userlogin))
 
-                    history("/product")
+                    history("/products")
                 }
             }
         }
