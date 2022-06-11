@@ -1,12 +1,14 @@
 import React from "react";
 import Details from "../Auth/Details";
-import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
+import {useSelector} from "react-redux"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import "../../Style/Navbar.css";
 
 const Navbar = () => {
+  const state=useSelector((state)=>state.handleCart)
+  console.log("state",state);
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light
@@ -63,10 +65,10 @@ const Navbar = () => {
           </form>
           <div className="buttons">
           <NavLink to="/cart" className="btn btn-outline-dark ms-2">
-            <i className="fa fa-shopping-cart me-1"></i>Cart(0)
+            <i className="fa fa-shopping-cart me-1"></i>Cart({state.length})
           </NavLink>
           </div>
-          {/* <Details /> */}
+          <Details />
         </div>
       </div>
     </nav>

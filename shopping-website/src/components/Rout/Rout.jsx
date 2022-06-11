@@ -13,7 +13,7 @@ import Product from '../product/Product';
 const Rout = () => {
   return (
     <>
-    {/* <Navbar/> */}
+    <Navbar/>
     <Routes>
     <Route path='/' element={<Header />} />
 
