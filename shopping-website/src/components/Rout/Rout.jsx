@@ -9,6 +9,8 @@ import Products from '../product/Products';
 import Product from '../product/Product';
 import Cart from '../cart/Cart';
 import Checkout from '../payment/Checkout';
+import Contact from '../contact/Contact';
+import About from '../About';
 
 
 
@@ -25,9 +27,8 @@ const Rout = () => {
       <Route path='/products/:id' element={<Product/>} />
       <Route path='/products/cart' element={<Cart/>} />
       <Route path='/checkout' element={<Checkout/>} />
-
-
-
+      <Route path='/contact' element={<Contact/>} />
+      <Route path='/about' element={<About/>} />
 
       <Route path='*' element={<Errror />} />
     </Routes>

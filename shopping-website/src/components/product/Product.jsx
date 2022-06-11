@@ -5,13 +5,14 @@ import {useDispatch} from 'react-redux'
 import { addCart } from "../redux/action";
 const Product = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
 
   const dispatch=useDispatch()
   const addProduct=(product)=>{
     dispatch(addCart(product))
     console.log("milind",product)
+  
   }
 
  

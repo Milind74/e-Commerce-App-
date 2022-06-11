@@ -8,6 +8,16 @@ import "../../Style/Navbar.css";
 
 const Navbar = () => {
   const state=useSelector((state)=>state.handleCart)
+
+  // localStorage.setItem("mycart", JSON.stringify(state))
+  if (state.length === 0) {
+console.log("card not added ");
+} else {
+    console.log("card added succesfulyy");
+
+    localStorage.setItem("mycart", JSON.stringify(state))
+
+}
   console.log("state",state);
   return (
     <nav
@@ -23,7 +33,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="navbar-brand fw-bold fs-4" to="/product">
+          <NavLink className="navbar-brand fw-bold fs-4" to="/products">
             Products{" "}
           </NavLink>
         </li>
