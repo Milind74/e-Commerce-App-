@@ -7,6 +7,8 @@ import {Routes,Route} from "react-router-dom"
 import Navbar from '../Navbar/Navbar';
 import Products from '../product/Products';
 import Product from '../product/Product';
+import Cart from '../cart/Cart';
+import Checkout from '../payment/Checkout';
 
 
 
@@ -21,6 +23,10 @@ const Rout = () => {
       <Route path='/login' element={<Login />} />
       <Route path='/products' element={<Products/>} />
       <Route path='/products/:id' element={<Product/>} />
+      <Route path='/products/cart' element={<Cart/>} />
+      <Route path='/checkout' element={<Checkout/>} />
+
+
 
 
       <Route path='*' element={<Errror />} />

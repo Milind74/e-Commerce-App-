@@ -72,7 +72,7 @@ const Product = () => {
           onClick={()=>addProduct(product)}>
             Add to Cart
           </button>
-          <NavLink to="/cart" className="btn btn-dark ms-2 py-2">
+          <NavLink to="/products/cart" className="btn btn-dark ms-2 py-2">
             Go to Cart
           </NavLink>
         </div>

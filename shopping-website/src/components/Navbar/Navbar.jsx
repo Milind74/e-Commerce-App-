@@ -64,7 +64,7 @@ const Navbar = () => {
             </button>
           </form>
           <div className="buttons">
-          <NavLink to="/cart" className="btn btn-outline-dark ms-2">
+          <NavLink to="/products/cart" className="btn btn-outline-dark ms-2">
             <i className="fa fa-shopping-cart me-1"></i>Cart({state.length})
           </NavLink>
           </div>
