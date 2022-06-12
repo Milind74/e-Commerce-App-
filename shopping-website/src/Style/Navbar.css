@@ -15,3 +15,13 @@ justify-content: space-between;
    
    
 }
+.pay1{
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    height: 500px;
+    margin: auto;
+}
+.gpay{
+    margin-top: 150px;
+}
