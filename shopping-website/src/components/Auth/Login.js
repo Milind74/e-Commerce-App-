@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import SIgn_img from '../Auth/SIgn_img'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,NavLink } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -101,7 +101,7 @@ const Login = () => {
                                 Submit
                             </Button>
                         </Form>
-                        <p className='mt-3'>Don't have an account <span>SignIn</span> </p>
+                        <p className='mt-3'>Don't have an account <span><NavLink to="/">SignUp</NavLink></span> </p>
                     </div>
                     <SIgn_img />
                 </section>

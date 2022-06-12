@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams,useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import {useDispatch} from 'react-redux'
 import { addCart } from "../redux/action";
+import Navbar from "../Navbar/Navbar";
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const dispatch=useDispatch()
   const addProduct=(product)=>{
@@ -15,6 +17,9 @@ const Product = () => {
   
   }
 
+  const handlegoback=()=>{
+    navigate(-1)
+  }
  
   useEffect(() => {
     const getProducts = async () => {
@@ -52,7 +57,9 @@ const Product = () => {
   const ShowProduct = () => {
     return (
       <>
-        <div className="col-md-6">
+            <Navbar />
+
+        <div className="col-md-6 my-5 py-5">
           <img
             src={product.image}
             alt={product.title}
@@ -60,7 +67,7 @@ const Product = () => {
             width="400px"
           />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 my-5 py-5" >
           <h4 className="text-uppercase text-black-50">{product.category}</h4>
           <h1 className="display-5">{product.title}</h1>
           <p className="lead">
@@ -76,6 +83,9 @@ const Product = () => {
           <NavLink to="/products/cart" className="btn btn-dark ms-2 py-2">
             Go to Cart
           </NavLink>
+
+          <button  className="btn btn-dark ms-2 py-2" onClick={handlegoback}>go back</button>
+
         </div>
       </>
     );

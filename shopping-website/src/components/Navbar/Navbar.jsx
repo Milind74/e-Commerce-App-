@@ -9,7 +9,6 @@ import "../../Style/Navbar.css";
 const Navbar = () => {
   const state=useSelector((state)=>state.handleCart)
 
-  // localStorage.setItem("mycart", JSON.stringify(state))
   if (state.length === 0) {
 console.log("card not added ");
 } else {
@@ -77,6 +76,7 @@ console.log("card not added ");
           <NavLink to="/products/cart" className="btn btn-outline-dark ms-2">
             <i className="fa fa-shopping-cart me-1"></i>Cart({state.length})
           </NavLink>
+
           </div>
           <Details />
         </div>

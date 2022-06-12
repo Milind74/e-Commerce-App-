@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
+import "../../Style/Navbar.css";
+
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -30,6 +32,7 @@ const Products = () => {
   const Loading = () => {
     return (
       <>
+
         <div className="col-md-3">
           <Skeleton height={350} />
         </div>
@@ -50,6 +53,8 @@ const Products = () => {
 
     return (
       <>
+
+
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
           <button
             className="btn btn-outline-dark me-2"
@@ -86,7 +91,8 @@ const Products = () => {
 
           return (
             <>
-              <div className="col-md-3 mb-4">
+
+              <div className=" productcard col-md-3 mb-4">
                 <div className="card h-100 text-center p-4" key={product.id}>
                   <img
                     src={product.image}
@@ -112,7 +118,11 @@ const Products = () => {
   };
   return (
     <div>
-      {/* <Navbar /> */}
+            <Navbar />
+            <div className="imggif">
+            <img style={{margin:"auto"}} src="./land.gif" alt=""  width="60%" />
+            <img src="/sale.gif" alt="" />
+            </div>
       <div className="container my-5 py-5">
         <div className="row">
           <div className="col-12 mb-5">

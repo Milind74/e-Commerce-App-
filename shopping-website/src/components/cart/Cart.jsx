@@ -1,13 +1,20 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 import { delCart } from "../redux/action";
 
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   console.log("state1", state);
+  
+const handlegoback=()=>{
+  navigate(-1)
+}
 
   const handleclose = (item) => {
     dispatch(delCart(item));
@@ -37,7 +44,9 @@ const Cart = () => {
                 {cartitem.qty} X {cartitem.price}=$
                 {cartitem.qty * cartitem.price}
               </p>
-              <button></button>
+              <button>+</button>
+              <button  className="btn btn-dark ms-2 py-2" onClick={handlegoback}>go back</button>
+
             </div>
           </div>
         </div>

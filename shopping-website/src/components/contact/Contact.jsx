@@ -1,7 +1,11 @@
 import React from "react";
+import Navbar from "../Navbar/Navbar";
 
 const Contact = () => {
   return (
+     < >
+         <Navbar/>
+
     <div className="container mb-5">
       <div className="row">
         <div className="col-12 text-center py-4 my-4">
@@ -67,6 +71,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

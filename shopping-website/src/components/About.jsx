@@ -1,8 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Navbar from "./Navbar/Navbar";
 
 const About = () => {
   return (
+      <>
+      <Navbar/>
     <div>
       <div className="container py-5 my-5">
         <div className="row">
@@ -31,6 +34,7 @@ const About = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -11,24 +11,27 @@ import Cart from '../cart/Cart';
 import Checkout from '../payment/Checkout';
 import Contact from '../contact/Contact';
 import About from '../About';
+import Pay from '../payment/Pay';
 
 
 
 const Rout = () => {
   return (
     <>
-    <Navbar/>
     <Routes>
-    <Route path='/' element={<Header />} />
+    
 
-      <Route path='/signup' element={<Home />} />
+      <Route path='/' element={<Home />} />
       <Route path='/login' element={<Login />} />
+
       <Route path='/products' element={<Products/>} />
       <Route path='/products/:id' element={<Product/>} />
       <Route path='/products/cart' element={<Cart/>} />
       <Route path='/checkout' element={<Checkout/>} />
       <Route path='/contact' element={<Contact/>} />
       <Route path='/about' element={<About/>} />
+      <Route path='/billing' element={<Pay/>} />
+
 
       <Route path='*' element={<Errror />} />
     </Routes>
