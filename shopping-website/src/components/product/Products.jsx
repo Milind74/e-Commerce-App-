@@ -3,14 +3,31 @@ import Navbar from "../Navbar/Navbar";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 import "../../Style/Navbar.css";
+import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 
 
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState(0);
+
   let componentMounted = true;
   console.log("data", data);
+  const images = [
+    "https://cdn.shopify.com/s/files/1/2028/6907/files/Ketnipz_Summer_Ad_2021_Banner_2048x.gif?v=1625867600",
+    "https://cdn.shopify.com/s/files/1/2028/6907/files/Cosy_Banner_3_2048x.gif?v=1622572252",
+    "https://cdn.shopify.com/s/files/1/2028/6907/files/Cozy_Banner_2_d988295a-7532-4616-a808-57cc0d91e14c_2048x.gif?v=1622572308"
+  ];
+  function handleImage(x) {
+    let f = image + x;
+    if (f === -1) {
+      f = images.length - 1;
+    } else if (f === images.length) {
+      f = 0;
+    }
+    setImage(f);
+  }
 
   useEffect(() => {
     const getProducts = async () => {
@@ -106,7 +123,8 @@ const Products = () => {
                     </h5>
                     <p className="card-text lead fw-bold">${product.price}</p>
                     <NavLink to={`/products/${product.id}`}
-                     className="btn btn-outline-dark">Buy Now </NavLink>
+                     >                     <img src="./buy-now-button.gif" alt="" width="180px" />
+ </NavLink>
                   </div>
                 </div>
               </div>
@@ -119,10 +137,28 @@ const Products = () => {
   return (
     <div>
             <Navbar />
-            <div className="imggif">
-            <img style={{margin:"auto"}} src="./land.gif" alt=""  width="60%" />
-            <img src="/sale.gif" alt="" />
-            </div>
+           
+
+
+<div className="banner">
+        <img src={images[image]} height="500" width="100%" alt="" />
+        <p
+          className="prev"
+          onClick={() => {
+            handleImage(-1);
+          }}
+        >
+          <FaLessThan />
+        </p>
+        <p
+          onClick={() => {
+            handleImage(+1);
+          }}
+        >
+          {" "}
+          <FaGreaterThan />
+        </p>
+      </div>
       <div className="container my-5 py-5">
         <div className="row">
           <div className="col-12 mb-5">

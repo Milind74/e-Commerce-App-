@@ -45,11 +45,11 @@ const handlegoback=()=>{
                 {cartitem.qty * cartitem.price}
               </p>
               <button>+</button>
-              <button  className="btn btn-dark ms-2 py-2" onClick={handlegoback}>go back</button>
 
             </div>
           </div>
         </div>
+        
       </div>
     );
   };
@@ -69,11 +69,12 @@ const handlegoback=()=>{
   const button=()=>{
 
     return(
-      <div className="container">
+      <div className="  container ">
         <div className="row">
           <NavLink to ="/checkout" className="btn btn-outline-primary
           mb-5 w-25">Proceed to checkout</NavLink>
-        </div>
+        </div >
+                     <button  className=" backbtn btn btn-dark ms-2 py-2" onClick={handlegoback}>go back</button>
       </div>
     )
   }

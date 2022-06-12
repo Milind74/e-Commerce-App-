@@ -25,3 +25,29 @@ justify-content: space-between;
 .gpay{
     margin-top: 150px;
 }
+.checkcart{
+    width: 800px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+
+
+.banner{
+  margin-top: 1%;
+}
+.prev,
+.prev + p {
+  position: absolute;
+  bottom: 250px;
+  font-size: 50px;
+}
+.prev {
+  left: 3%;
+}
+.prev + p {
+  left: 95%;
+}
+
+
