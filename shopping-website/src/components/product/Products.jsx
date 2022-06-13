@@ -110,7 +110,7 @@ const Products = () => {
             <>
 
               <div className=" productcard col-md-3 mb-4">
-                <div className="card h-100 text-center p-4" key={product.id}>
+                <div className="containerchild2 card h-100 text-center p-4" key={product.id}>
                   <img
                     src={product.image}
                     className="card-img-top"
@@ -122,8 +122,8 @@ const Products = () => {
                       {product.title.substring(0, 12)}...
                     </h5>
                     <p className="card-text lead fw-bold">${product.price}</p>
-                    <NavLink to={`/products/${product.id}`}
-                     >                     <img src="./buy-now-button.gif" alt="" width="180px" />
+                    <NavLink to={`/products/${product.id}`}>    
+                    <button className=" backbtn btn btn-dark ms-2 py-2">buy now</button>                
  </NavLink>
                   </div>
                 </div>

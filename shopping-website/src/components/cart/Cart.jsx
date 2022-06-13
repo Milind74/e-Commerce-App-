@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink,useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import { delCart } from "../redux/action";
+import { addCart, delCart } from "../redux/action";
 
 
 const Cart = () => {
@@ -19,6 +19,11 @@ const handlegoback=()=>{
   const handleclose = (item) => {
     dispatch((delCart(item)));
   };
+  const handleadd=(product)=>{
+    dispatch(addCart(product))
+    console.log("milind",product)
+
+  }
 
   const cartitems = (cartitem) => {
     return (
@@ -30,7 +35,7 @@ const handlegoback=()=>{
             aria-label="Close"
           ></button>
           <div className="row justify-content-center">
-            <div className="col-md-4">
+            <div className="added-item col-md-4">
               <img
                 src={cartitem.image}
                 alt={cartitem.title}
@@ -44,7 +49,7 @@ const handlegoback=()=>{
                 {cartitem.qty} X {cartitem.price}=$
                 {cartitem.qty * cartitem.price}
               </p>
-              <button>+</button>
+              <button onClick={handleadd}>+</button>
 
             </div>
           </div>

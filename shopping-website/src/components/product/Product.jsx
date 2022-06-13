@@ -59,7 +59,7 @@ const Product = () => {
       <>
             <Navbar />
 
-        <div className="col-md-6 my-5 py-5">
+        <div className="details col-md-6 my-5 py-5">
           <img
             src={product.image}
             alt={product.title}
