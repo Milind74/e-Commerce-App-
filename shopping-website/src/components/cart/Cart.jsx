@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink,useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { addCart, delCart } from "../redux/action";
+import '../../Style/Navbar.css'
+
 
 
 const Cart = () => {
@@ -77,10 +79,10 @@ const handlegoback=()=>{
     return(
       <div className="  container ">
         <div className="row">
-          <NavLink to ="/checkout" className="btn btn-outline-primary
+          <NavLink to ="/checkout" className="payment btn btn-outline-primary
           mb-5 w-25">Proceed to checkout</NavLink>
         </div >
-                     <button  className=" backbtn btn btn-dark ms-2 py-2" onClick={handlegoback}>go back</button>
+          <button  className=" back btn btn-dark ms-2 py-2" onClick={handlegoback}>go back</button>
       </div>
     )
   }

@@ -41,11 +41,13 @@ console.log("card not added ");
     "
     >
       <div className="container">
-        <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <NavLink className="navbar-brand fw-bold fs-4" to="/">
-            Eshop{" "}
+      <NavLink className="navbar-brand fw-bold fs-4" to="/">
+        <img src="./logo.gif" alt="" height="100" width="100px" />
           </NavLink>
+        <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+        
+        <li className="nav-item">
+         
         </li>
         <li className="nav-item">
           <NavLink className="navbar-brand fw-bold fs-4" to="/products">

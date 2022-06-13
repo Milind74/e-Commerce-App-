@@ -3,8 +3,8 @@ import Navbar from "../Navbar/Navbar";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 import "../../Style/Navbar.css";
-import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 
+import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -17,7 +17,7 @@ const Products = () => {
   const images = [
     "https://cdn.shopify.com/s/files/1/2028/6907/files/Ketnipz_Summer_Ad_2021_Banner_2048x.gif?v=1625867600",
     "https://cdn.shopify.com/s/files/1/2028/6907/files/Cosy_Banner_3_2048x.gif?v=1622572252",
-    "https://cdn.shopify.com/s/files/1/2028/6907/files/Cozy_Banner_2_d988295a-7532-4616-a808-57cc0d91e14c_2048x.gif?v=1622572308"
+    "https://cdn.shopify.com/s/files/1/2028/6907/files/Cozy_Banner_2_d988295a-7532-4616-a808-57cc0d91e14c_2048x.gif?v=1622572308",
   ];
   function handleImage(x) {
     let f = image + x;
@@ -28,7 +28,7 @@ const Products = () => {
     }
     setImage(f);
   }
-  
+
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
@@ -49,7 +49,6 @@ const Products = () => {
   const Loading = () => {
     return (
       <>
-
         <div className="col-md-3">
           <Skeleton height={350} />
         </div>
@@ -67,11 +66,8 @@ const Products = () => {
     setFilter(updatedList);
   };
   const ShowProducts = () => {
-
     return (
       <>
-
-
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
           <button
             className="btn btn-outline-dark me-2"
@@ -105,12 +101,13 @@ const Products = () => {
           </button>
         </div>
         {filter.map((product) => {
-
           return (
             <>
-
               <div className=" productcard col-md-3 mb-4">
-                <div className="containerchild2 card h-100 text-center p-4" key={product.id}>
+                <div
+                  className="containerchild2 card h-100 text-center p-4"
+                  key={product.id}
+                >
                   <img
                     src={product.image}
                     className="card-img-top"
@@ -118,13 +115,22 @@ const Products = () => {
                     height="250px"
                   />
                   <div className="card-body">
-                    <h5 className="card-title mb-0">
+                    <h5 className=" product_card__title card-title mb-0">
                       {product.title.substring(0, 12)}...
                     </h5>
-                    <p className="card-text lead fw-bold">${product.price}</p>
-                    <NavLink to={`/products/${product.id}`}>    
-                    <button className=" backbtn btn btn-dark ms-2 py-2">buy now</button>                
- </NavLink>
+                    <p className=" product_card__price card-text lead fw-bold">${product.price}</p>
+
+                    <div className="size">
+                      <span className="span1">s</span>
+                      <span className="span1">m</span>
+                      <span className="span1">l</span>
+                      <span className="span1">xl</span>
+                    </div>
+                    <NavLink to={`/products/${product.id}`}>
+                      <button className=" backbtn btn btn-dark ms-2 py-2">
+                        buy now
+                      </button>
+                    </NavLink>
                   </div>
                 </div>
               </div>
@@ -136,11 +142,9 @@ const Products = () => {
   };
   return (
     <div>
-            <Navbar />
-           
+      <Navbar />
 
-
-<div className="banner">
+      <div className="banner">
         <img src={images[image]} height="500" width="100%" alt="" />
         <p
           className="prev"
