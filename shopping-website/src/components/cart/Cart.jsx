@@ -2,9 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink,useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import { addCart, delCart } from "../redux/action";
-import '../../Style/Navbar.css'
-
+import { delCart } from "../redux/action";
 
 
 const Cart = () => {
@@ -21,13 +19,11 @@ const handlegoback=()=>{
   const handleclose = (item) => {
     dispatch((delCart(item)));
   };
-  const handleadd=(product)=>{
-    dispatch(addCart(product))
-    console.log("milind",product)
+  // const handleadd=()=>{
+  //   addCart()
 
-  }
+  // }
 
-  
   const cartitems = (cartitem) => {
     return (
       <div className="px-4 my-5 bg-light-rounded-3 " key={cartitem.id}>
@@ -52,7 +48,7 @@ const handlegoback=()=>{
                 {cartitem.qty} X {cartitem.price}=$
                 {cartitem.qty * cartitem.price}
               </p>
-              <button onClick={handleadd}>+</button>
+              <button >+</button>
 
             </div>
           </div>
@@ -82,7 +78,7 @@ const handlegoback=()=>{
           <NavLink to ="/checkout" className="payment btn btn-outline-primary
           mb-5 w-25">Proceed to checkout</NavLink>
         </div >
-          <button  className=" back btn btn-dark ms-2 py-2" onClick={handlegoback}>go back</button>
+            <button  className="back backbtn btn btn-dark ms-2 py-2" onClick={handlegoback}>go back</button>
       </div>
     )
   }
