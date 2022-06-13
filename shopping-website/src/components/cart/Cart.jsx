@@ -17,7 +17,7 @@ const handlegoback=()=>{
 }
 
   const handleclose = (item) => {
-    dispatch(delCart(item));
+    dispatch((delCart(item)));
   };
 
   const cartitems = (cartitem) => {

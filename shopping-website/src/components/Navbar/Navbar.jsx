@@ -1,13 +1,29 @@
-import React from "react";
+import React,{useState} from "react";
 import Details from "../Auth/Details";
 import { NavLink } from "react-router-dom";
-import {useSelector} from "react-redux"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {useSelector,useDispatch} from "react-redux"
 
 import "../../Style/Navbar.css";
+import { searchData } from "../redux/action";
 
 const Navbar = () => {
+  const [timer, setTimer] = useState(undefined);//state for debouncing
+  const dispatch = useDispatch();//dispath used to triger an action
+
   const state=useSelector((state)=>state.handleCart)
+
+  const handlesearch = (e) => {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    setTimer(
+      setTimeout(() => {
+        dispatch(searchData(e.target.value));
+        console.log("debounce=", e.target.value);
+      }, 300)
+    );
+  };
+
 
   if (state.length === 0) {
 console.log("card not added ");
@@ -63,6 +79,7 @@ console.log("card not added ");
          id="navbarSupportedContent">
           <form className="d-flex" role="search">
             <input
+            onKeyUp={handlesearch}
               className="form-control me-2"
               type="search"
               placeholder="Search"
