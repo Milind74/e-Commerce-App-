@@ -57,9 +57,10 @@ const Product = () => {
   const ShowProduct = () => {
     return (
       <>
-            <Navbar />
-
+           
+           <Navbar />
         <div className="details col-md-6 my-5 py-5">
+          
           <img
             src={product.image}
             alt={product.title}

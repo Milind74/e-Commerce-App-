@@ -90,14 +90,14 @@ const Login = () => {
 
                             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
 
-                                <Form.Control type="email" name='email' onChange={getdata} placeholder="Enter email" />
+                                <Form.Control type="email" name='email' onChange={getdata} placeholder="username" />
                             </Form.Group>
 
                             <Form.Group className="mb-3 col-lg-6" controlId="formBasicPassword">
 
-                                <Form.Control type="password" name='password' onChange={getdata} placeholder="Password" />
+                                <Form.Control type="password" name='password' onChange={getdata} placeholder="password" />
                             </Form.Group>
-                            <Button variant="primary" className='col-lg-6' onClick={addData} style={{ background: "rgb(67, 185, 127)" }} type="submit">
+                            <Button data-testid="btn" variant="primary" className='col-lg-6' onClick={addData} style={{ background: "rgb(67, 185, 127)" }} type="submit">
                                 Submit
                             </Button>
                         </Form>
