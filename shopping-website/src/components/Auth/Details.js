@@ -53,8 +53,8 @@ const Details = () => {
             {
                 logindata.length === 0 ? "errror" :
                     <>
-                    <div >
-                        <h3>{logindata[0].name}</h3>
+                    <div className="d-flex flex-row">
+                        <h3 className="text-capitalize me-3">{logindata[0].name}</h3>
                         <Button onClick={userlogout}>LogOut</Button>
                         </div>
 

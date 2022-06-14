@@ -2,7 +2,7 @@ import { ADDITEM,DELITEM, SEARCHDATA_SUCCESS,
   SEARCHDATA_REQUEST,
   SEARCHDATA_FAILURE,
    } from "../action/actiontype";
-const cart = localStorage.getItem("mycart")?JSON.parse(localStorage.getItem("mycart")):[];
+const cart = localStorage.getItem("mycart")? JSON.parse(localStorage.getItem("mycart")):[];
 const handleCart = (state=cart, action) => {
   const product = action.payload;
   switch (action.type) {

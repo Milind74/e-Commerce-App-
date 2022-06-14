@@ -65,7 +65,6 @@ const Checkout = () => {
                     className="form-control"
                     id="firstName"
                     placeholder=""
-                    value=""
                     required=""
                   />
                   <div className="invalid-feedback">
@@ -82,7 +81,7 @@ const Checkout = () => {
                     className="form-control"
                     id="lastName"
                     placeholder=""
-                    value=""
+                 
                     required=""
                   />
                   <div className="invalid-feedback">

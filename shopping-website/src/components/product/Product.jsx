@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useParams,useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import {useDispatch} from 'react-redux'
-import { addCart } from "../redux/action";
+import { addCart, searchData } from "../redux/action";
 import Navbar from "../Navbar/Navbar";
 const Product = () => {
   const { id } = useParams();
@@ -27,9 +27,11 @@ const Product = () => {
       const response = await fetch(`http://localhost:3001/data/${id}`);
       setProduct(await response.json());
       setLoading(false);
+      
     };
     getProducts();
   }, []);
+
   const Loading = () => {
     return (
       <>
@@ -57,8 +59,10 @@ const Product = () => {
   const ShowProduct = () => {
     return (
       <>
-           
+          
            <Navbar />
+           
+
         <div className="details col-md-6 my-5 py-5">
           
           <img
@@ -85,7 +89,7 @@ const Product = () => {
             Go to Cart
           </NavLink>
 
-          <button  className="btn btn-dark ms-2 py-2" onClick={handlegoback}>go back</button>
+          <button  className="btn btn-dark ms-2 py-2" onClick={handlegoback}>Back</button>
 
         </div>
       </>
@@ -99,3 +103,4 @@ const Product = () => {
 };
 
 export default Product;
+

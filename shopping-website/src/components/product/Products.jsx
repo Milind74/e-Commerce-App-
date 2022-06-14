@@ -121,14 +121,14 @@ const Products = () => {
                     <p className=" product_card__price card-text lead fw-bold">${product.price}</p>
 
                     <div className="size">
-                      <span className="span1">s</span>
-                      <span className="span1">m</span>
+                      <span className="span1">S</span>
+                      <span className="span1">M</span>
                       <span className="span1">l</span>
-                      <span className="span1">xl</span>
+                      <span className="span1">Xl</span>
                     </div>
                     <NavLink to={`/products/${product.id}`}>
                       <button className=" backbtn btn btn-dark ms-2 py-2">
-                        buy now
+                        Buy Now
                       </button>
                     </NavLink>
                   </div>

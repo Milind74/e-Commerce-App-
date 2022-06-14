@@ -20,12 +20,16 @@ function App() {
   return (
     <ThemeProvider theme={theme==="light"?lightTheme:darkTheme}>
     <GlobalStyles />
-   <>
-   <button onClick={toggleTheme}>Toggle theme</button>
+   
+   {/* <button onClick={toggleTheme}>Toggle theme</button> */}
 
+   <div className="d-flex justify-content-end mx-3 my-1"><label className="switch">
+  <input onChange={toggleTheme} type="checkbox" />
+  <span className="slider round"></span>
+</label></div>
    <Rout/>
    
-   </>
+   
    </ThemeProvider>
 
   );

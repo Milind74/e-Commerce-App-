@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import Details from "../Auth/Details";
 import { NavLink } from "react-router-dom";
 import {useSelector,useDispatch} from "react-redux"
+import Products from "../product/Products";
 
 import "../../Style/Navbar.css";
 import { searchData } from "../redux/action";
@@ -12,6 +13,8 @@ const Navbar = () => {
 
   const state=useSelector((state)=>state.handleCart)
 
+
+
   const handlesearch = (e) => {
     if (timer) {
       clearTimeout(timer);
@@ -20,6 +23,7 @@ const Navbar = () => {
       setTimeout(() => {
         dispatch(searchData(e.target.value));
         console.log("debounce=", e.target.value);
+        
       }, 300)
     );
   };
@@ -37,12 +41,12 @@ console.log("card not added ");
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light
-     bg-white py-3 shadow-sm
+     bg-white shadow-sm
     "
     >
       <div className="container">
       <NavLink className="navbar-brand fw-bold fs-4" to="/">
-        <img src="./logo.gif" alt="" height="100" width="100px" />
+        <img src="./shoplogo.jpg" alt="" height="100" width="100px" />
           </NavLink>
         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
         
@@ -100,6 +104,9 @@ console.log("card not added ");
           <Details />
         </div>
       </div>
+      
+
+
     </nav>
   );
 };
