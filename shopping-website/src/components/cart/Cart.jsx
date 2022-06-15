@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink,useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import { delCart } from "../redux/action";
+import { addCart, delCart } from "../redux/action";
 
 
 const Cart = () => {
@@ -19,10 +19,17 @@ const handlegoback=()=>{
   const handleclose = (item) => {
     dispatch((delCart(item)));
   };
-  // const handleadd=()=>{
-  //   addCart()
 
-  // }
+  const handleadd=(cartitem)=>{
+dispatch(addCart(cartitem))
+console.log("added increment");
+  }
+  const handlesub=(cartitem)=>{
+    dispatch(delCart(cartitem))
+console.log("added increment");
+
+  }
+
 
   const cartitems = (cartitem) => {
     return (
@@ -48,7 +55,10 @@ const handlegoback=()=>{
                 {cartitem.qty} X {cartitem.price}=$
                 {cartitem.qty * cartitem.price}
               </p>
-              <button >+</button>
+              <button onClick={(e)=>{handleadd(cartitem)}} >+</button>
+
+              <button onClick={(e)=>{handlesub(cartitem)}} >-</button>
+
 
             </div>
           </div>

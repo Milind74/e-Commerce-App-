@@ -1,34 +1,19 @@
-import{render} from "@testing-library/react"
-import Login from "../Auth/Login"
 
-// test('username input should be rendered', () => { 
-//     render(<Login/>)
-//     const userInputEl=screen.getByPlaceholderText(/username/i)
-//     expect(userInputEl).toBeInTheDocument()
+import { fireEvent, render, screen } from "@testing-library/react"
+import renderer from "react-test-renderer"
+import About from "../About"
 
-//  })
+const testid = {
+    heading: "header",
+}
+describe("Home.jsx tests", () => {
 
+    it('should render without an error with initial values', () => {
+        render(<About />)
+        const heading = screen.getByTestId(testid.header)
 
- 
-test('username should be empty', () => { 
-    render(<Login/>)
-    const userInputEl=screen.getByPlaceholderText(/username/i)
-    expect(userInputEl.value).toBe("") 
-
- })
-
- 
-// test('password input should be rendered', () => { 
-//     render(<Login/>)
-//     const passwordInputEl=screen.getByPlaceholderText(/password/i)
-//     expect(passwordInputEl).toBeInTheDocument()
-
-//  })
-
- 
-// test('button input should be rendered', () => { 
-//     render(<Login/>)
-//     const buttonInputEl=screen.getByRole(/button/i)
-//     expect(buttonInputEl).toBeInTheDocument()
-
-//  })
+        expect(heading.textContent).toBe("About Us")
+        expect(heading.tagName).toBe("H1")
+    })
+    
+})
