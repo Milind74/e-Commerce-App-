@@ -142,7 +142,7 @@ const Products = () => {
   };
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="banner">
         <img src={images[image]} height="500" width="100%" alt="" />

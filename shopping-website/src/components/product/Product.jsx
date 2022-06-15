@@ -4,6 +4,7 @@ import Skeleton from "react-loading-skeleton";
 import {useDispatch} from 'react-redux'
 import { addCart, searchData } from "../redux/action";
 import Navbar from "../Navbar/Navbar";
+import Button from "../Button/Button";
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
@@ -17,10 +18,6 @@ const Product = () => {
   
   }
 
-  const handlegoback=()=>{
-    navigate(-1)
-  }
- 
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
@@ -57,10 +54,10 @@ const Product = () => {
   };
 
   const ShowProduct = () => {
+    const prodProps = { navigate, product };
     return (
       <>
           
-           <Navbar />
            
 
         <div className="details col-md-6 my-5 py-5">
@@ -89,16 +86,20 @@ const Product = () => {
             Go to Cart
           </NavLink>
 
-          <button  className="btn btn-dark ms-2 py-2" onClick={handlegoback}>Back</button>
-
+<Button {...prodProps}/>
         </div>
       </>
     );
   };
   return (
+    <>    
+                 {/* <Navbar /> */}
     <div className="container">
+
       <div className="row py-4">{loading ? <Loading /> : <ShowProduct />}</div>
     </div>
+    </>
+
   );
 };
 

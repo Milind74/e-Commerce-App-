@@ -10,10 +10,12 @@ import Checkout from "../payment/Checkout";
 import Contact from "../contact/Contact";
 import About from "../About";
 import Pay from "../payment/Pay";
+import Navbar from "../Navbar/Navbar";
 
 const Rout = () => {
   return (
     <>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
