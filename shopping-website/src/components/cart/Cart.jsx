@@ -55,9 +55,9 @@ console.log("added increment");
                 {cartitem.qty} X {cartitem.price}=$
                 {cartitem.qty * cartitem.price}
               </p>
-              <button onClick={(e)=>{handleadd(cartitem)}} >+</button>
+              <button className="btn btn-outline-dark me-4" onClick={(e)=>{handleadd(cartitem)}} ><i className="fa fa-plus"></i></button>
 
-              <button onClick={(e)=>{handlesub(cartitem)}} >-</button>
+              <button className="btn btn-outline-dark me-4" onClick={(e)=>{handlesub(cartitem)}} ><i className="fa fa-minus"></i></button>
 
 
             </div>
