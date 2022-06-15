@@ -15,7 +15,6 @@ import Navbar from "../Navbar/Navbar";
 const Rout = () => {
   return (
     <>
-    <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

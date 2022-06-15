@@ -3,13 +3,15 @@ import Details from "../Auth/Details";
 import { NavLink } from "react-router-dom";
 import {useSelector,useDispatch} from "react-redux"
 import Products from "../product/Products";
+import axios from 'axios';
 
 import "../../Style/Navbar.css";
-import { searchData } from "../redux/action";
+// import { searchData } from "../redux/action";
 
-const Navbar = () => {
+const Navbar = ({setSearchedData}) => {
   const [timer, setTimer] = useState(undefined);//state for debouncing
   const dispatch = useDispatch();//dispath used to triger an action
+  
 
   const state=useSelector((state)=>state.handleCart)
 
@@ -21,13 +23,19 @@ const Navbar = () => {
     }
     setTimer(
       setTimeout(() => {
-        dispatch(searchData(e.target.value));
+        (searchData(e.target.value));
         console.log("debounce=", e.target.value);
         
       }, 300)
     );
   };
 
+  const searchData = (payload)=>{  
+    return axios.get(`http://localhost:3001/data?category=${payload}`)
+    .then((res)=>{
+    console.log("search data",res.data)
+    setSearchedData(res.data)})
+    }
 
   if (state.length === 0) {
 console.log("card not added ");

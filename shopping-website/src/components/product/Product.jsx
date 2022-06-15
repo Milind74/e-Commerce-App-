@@ -3,8 +3,8 @@ import { NavLink, useParams,useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import {useDispatch} from 'react-redux'
 import { addCart, searchData } from "../redux/action";
-import Navbar from "../Navbar/Navbar";
 import Button from "../Button/Button";
+import Navbar from "../Navbar/Navbar";
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
@@ -85,15 +85,17 @@ const Product = () => {
           <NavLink to="/products/cart" className="btn btn-dark ms-2 py-2">
             Go to Cart
           </NavLink>
-
+<div >
 <Button {...prodProps}/>
+
+</div>
         </div>
       </>
     );
   };
   return (
     <>    
-                 {/* <Navbar /> */}
+                 <Navbar />
     <div className="container">
 
       <div className="row py-4">{loading ? <Loading /> : <ShowProduct />}</div>

@@ -11,6 +11,7 @@ const Products = () => {
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState(0);
+  const [searchedData, setSearchedData] = useState([])
 
   let componentMounted = true;
   console.log("data", data);
@@ -45,6 +46,16 @@ const Products = () => {
     };
     getProducts();
   }, []);
+
+  useEffect(()=>{
+    if(searchedData.length){
+    setFilter(searchedData)
+    }
+    else{
+      setFilter(data) 
+    }
+    // console.log('ssssss',searchedData)
+  },[searchedData])
 
   const Loading = () => {
     return (
@@ -142,7 +153,9 @@ const Products = () => {
   };
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar
+        setSearchedData={setSearchedData}
+      />
 
       <div className="banner">
         <img src={images[image]} height="500" width="100%" alt="" />
