@@ -74,6 +74,12 @@ justify-content: space-between;
     justify-content: flex-end;
 
 }
+.displaytitle,.displayprice{
+  font-size: 20px;
+}
+.lead{
+  font-size: 18px;
+}
 
 
 .inputclass {
