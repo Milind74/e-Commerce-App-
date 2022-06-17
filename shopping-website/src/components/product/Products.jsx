@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 import "../../Style/Navbar.css";
-
+import styles from "../../Style/style.module.css"
 import { FaGreaterThan, FaLessThan } from "react-icons/fa";
+import Modal from "@mui/material/Modal";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -12,7 +13,10 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState(0);
   const [searchedData, setSearchedData] = useState([])
-
+  const [showAll, setShowAll] = useState(false)
+  const [open, setOpen] = useState(false); //hook for modal
+  const [image1, setImage1] = useState(""); //hook for modal
+  
   let componentMounted = true;
   console.log("data", data);
   const images = [
@@ -29,6 +33,28 @@ const Products = () => {
     }
     setImage(f);
   }
+
+
+  //modal logic
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const handleimage = (loading) => {
+    setImage1(loading);
+    handleOpen();
+  };
+  const handleicon=useRef(null)
+
+  const icontoggle=()=>{
+    if(handleicon.current.style.color==="red"  ){
+   handleicon.current.style.color="white" 
+   console.log("milind");
+  }
+  else{
+    handleicon.current.style.color="red" 
+
+  }
+}
 
   useEffect(() => {
     const getProducts = async () => {
@@ -111,7 +137,7 @@ const Products = () => {
             Electronic
           </button>
         </div>
-        {filter.map((product) => {
+        { filter.map((product) => {
           return (
             <>
               <div className=" productcard col-md-3 mb-4">
@@ -120,7 +146,11 @@ const Products = () => {
                   key={product.id}
                 >
                   <img
+                   
                     src={product.image}
+                    onClick={() => {
+                      handleimage(product.image);
+                    }}
                     className="card-img-top"
                     alt={product.title}
                     height="250px"
@@ -142,9 +172,27 @@ const Products = () => {
                         Buy Now
                       </button>
                     </NavLink>
+
                   </div>
                 </div>
               </div>
+
+             <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <div className={styles.modal}>
+          <div className={styles.loadingimg}>
+            <img src={image1} alt="loading"></img>
+          </div>
+          <div ref={handleicon} className={styles.icons}>
+            <i  onClick={()=>icontoggle()}  className="fas fa-heart"></i>
+          </div>
+        </div>
+      </Modal>
+    
             </>
           );
         })}

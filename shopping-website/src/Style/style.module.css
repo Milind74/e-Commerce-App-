@@ -1,0 +1,39 @@
+
+
+/* -------styles for modal-------- */
+.modal {
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    width: 600px;
+    height: 300px;
+    margin: auto;
+
+    border-radius: 10px;
+}
+
+.modal img {
+
+    width: 600px;
+    height: 500px;
+    border-radius: 10px;
+
+
+}
+.modal:hover{
+    filter: grayscale(0.5);
+    box-shadow: 0 0 0;
+    transition: 400ms;
+    cursor: pointer;
+}
+
+
+
+.icons{
+    margin-top: -50px;
+    margin-left: 550px;
+    font-size:x-large;
+    cursor: pointer;
+    border:  1px solid rgb(173, 89, 89);
+}
+

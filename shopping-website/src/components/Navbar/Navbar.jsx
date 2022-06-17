@@ -10,7 +10,7 @@ import "../../Style/Navbar.css";
 
 const Navbar = ({setSearchedData}) => {
   const [timer, setTimer] = useState(undefined);//state for debouncing
-  const dispatch = useDispatch();//dispath used to triger an action
+  // const dispatch = useDispatch();//dispath used to triger an action
   
 
   const state=useSelector((state)=>state.handleCart)
@@ -52,7 +52,7 @@ console.log("card not added ");
      bg-white shadow-sm
     "
     >
-      <div className="container">
+      {/* <div className="container"> */}
       <NavLink className="navbar-brand fw-bold fs-4" to="/">
         <img src="./shoplogo.jpg" alt="" height="100" width="100px" />
           </NavLink>
@@ -78,40 +78,30 @@ console.log("card not added ");
         </li>
         </ul>
 
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        
         <div className="collapse navbar-collapse"
          id="navbarSupportedContent">
           <form className="d-flex" role="search">
-            <input
+            <input style={{width:"300px",marginLeft:"70px"}}
             onKeyUp={handlesearch}
               className="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
+         
           </form>
+          <div className="navright">
           <div className="buttons">
-          <NavLink to="/products/cart" className="btn btn-outline-dark ms-2">
+          <NavLink to="/products/cart" className=" btncart btn btn-outline-dark ms-2">
             <i className="fa fa-shopping-cart me-1"></i>Cart({state.length})
           </NavLink>
 
           </div>
           <Details />
+          </div>
         </div>
-      </div>
+      {/* </div> */}
       
 
 

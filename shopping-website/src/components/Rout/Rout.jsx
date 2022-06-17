@@ -2,7 +2,7 @@ import React from "react";
 import Home from "../Auth/Home";
 import Login from "../Auth/Login";
 import Errror from "../Auth/Errror";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Router } from "react-router-dom";
 import Products from "../product/Products";
 import Product from "../product/Product";
 import Cart from "../cart/Cart";
@@ -15,6 +15,7 @@ import Navbar from "../Navbar/Navbar";
 const Rout = () => {
   return (
     <>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -29,6 +30,7 @@ const Rout = () => {
 
         <Route path="*" element={<Errror />} />
       </Routes>
+
     </>
   );
 };

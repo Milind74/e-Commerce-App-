@@ -7,9 +7,9 @@ const Pay = () => {
 
    
   return (
-    <div className='pay1' >
-    <img src="./pay1.gif" alt="" height="400" width="400" />
-    <hr />
+    <div data-testid="parent" className='pay1' >
+    <img   src="./pay1.gif" alt="" height="400" width="400" />
+    <hr data-testid="hr" />
      <GooglePayButton className='gpay'
         environment="TEST"
         paymentRequest={{
