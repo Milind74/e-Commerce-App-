@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { useNavigate } from 'react-router-dom'
+import "../../Style/Navbar.css";
 
 const Details = () => {
 
@@ -53,12 +54,15 @@ const Details = () => {
             {
                 logindata.length === 0 ? "errror" :
                     <>
+                    <div className='logname'>
                        <i style={{marginLeft:"60px",fontSize:"30px",}} class="fa-solid fa-circle-user"></i>
-                        <h3 className="text-capitalize me-3">{logindata[0].name}</h3>
-                 
-                    <div className=" logbtn d-flex flex-row">
+                        <h3 className="text-capitalize ">{logindata[0].name}</h3>
+                        </div>
+                    <div className=" logbtn d-flex flex-row ">
                     <Button onClick={userlogout}>LogOut</Button>
                         </div>
+
+                        
                         
                       
 

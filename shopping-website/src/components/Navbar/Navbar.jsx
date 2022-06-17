@@ -53,8 +53,8 @@ console.log("card not added ");
     "
     >
       {/* <div className="container"> */}
-      <NavLink className="navbar-brand fw-bold fs-4" to="/">
-        <img src="./shoplogo.jpg" alt="" height="100" width="100px" />
+      <NavLink className="navbar-brand fw-bold fs-4" to="/products">
+        <img src="https://cdn.shopify.com/s/files/1/2028/6907/files/Ketnipz_Header_550x_dd3e502e-9e2e-4ad6-8c4d-e7cadd42b578_130x.gif?v=1592267404" alt="" height="50" width="70px" />
           </NavLink>
         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
         
@@ -62,17 +62,17 @@ console.log("card not added ");
          
         </li>
         <li className="nav-item">
-          <NavLink className="navbar-brand fw-bold fs-4" to="/products">
+          <NavLink className="navbar-brand fw-bold fs-5" to="/products">
             Products{" "}
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="navbar-brand fw-bold fs-4" to="/about">
+          <NavLink className="navbar-brand fw-bold fs-5" to="/about">
             About{" "}
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="navbar-brand fw-bold fs-4" to="/contact">
+          <NavLink className="navbar-brand fw-bold fs-5" to="/contact">
             Contact{" "}
           </NavLink>
         </li>
@@ -81,7 +81,7 @@ console.log("card not added ");
         
         <div className="collapse navbar-collapse"
          id="navbarSupportedContent">
-          <form className="d-flex" role="search">
+          <form className=" inputclass d-flex" role="search">
             <input style={{width:"300px",marginLeft:"70px"}}
             onKeyUp={handlesearch}
               className="form-control me-2"
@@ -94,7 +94,7 @@ console.log("card not added ");
           <div className="navright">
           <div className="buttons">
           <NavLink to="/products/cart" className=" btncart btn btn-outline-dark ms-2">
-            <i className="fa fa-shopping-cart me-1"></i>Cart({state.length})
+            <i className="fa fa-shopping-cart me-2 fs-5"></i>Cart({state.length})
           </NavLink>
 
           </div>

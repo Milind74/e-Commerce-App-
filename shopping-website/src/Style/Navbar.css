@@ -1,3 +1,8 @@
+*{
+  font-family: Questrial,sans-serif;
+
+}
+
 .collapse{
 display: flex;
 justify-content: space-between;
@@ -25,19 +30,24 @@ justify-content: space-between;
   border-radius: 10px;
 }
 
-
 .containerchild2>img:hover {
   filter: grayscale(0.5);
   box-shadow: 0 0 0;
   transition: 400ms;
   cursor: pointer;
 }
-.cart{
-   
-   
+.logbtn{
+  margin-left: 50px;
 }
-
-
+.logname{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  
+}
+.logname>h3{
+  margin-left: 10px;
+}
 .product_card__title {
   font-weight: 700;
   font-size: 18px;
@@ -66,6 +76,42 @@ justify-content: space-between;
 }
 
 
+.inputclass {
+  
+  display: flex;
+  background: hsla(0, 0%, 100%, .25);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  width: 40%;
+  outline: 0 none;
+  opacity: .8;
+  min-height: 36px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  color: #fff;
+  text-shadow: inherit;
+  -webkit-text-fill-color: inherit;
+
+
+
+}
+
+input {
+  /* margin-top: 20px; */
+  background: hsla(0, 0%, 100%, .25);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  width: 100%;
+  outline: 0 none;
+  opacity: .8;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  color: white;
+  text-shadow: inherit;
+  -webkit-text-fill-color: inherit;
+}
 
 .banner{
   margin-top: 1%;
