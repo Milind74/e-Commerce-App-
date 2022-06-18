@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../Footer/Footer";
 import { Button } from "../../__test__/Button/Button";
 import Navbar from "../Navbar/Navbar";
 
@@ -74,6 +75,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
     </>
   );
 };

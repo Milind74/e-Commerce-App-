@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import Footer from "../../Footer/Footer";
 
 const Checkout = () => {
   const state = useSelector((state) => state.handleCart);
@@ -271,6 +272,8 @@ const Checkout = () => {
           </div>
         </div>
       </div>
+      <Footer/>
+
     </>
   );
 };

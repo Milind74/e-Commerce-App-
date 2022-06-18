@@ -6,6 +6,7 @@ import { addCart, searchData } from "../redux/action";
 import Button from "../Button/Button";
 import Navbar from "../Navbar/Navbar";
 import "../../Style/Navbar.css";
+import Footer from "../../Footer/Footer";
 
 const Product = () => {
   const { id } = useParams();
@@ -92,6 +93,8 @@ const Product = () => {
 
 </div>
         </div>
+      
+
       </>
     );
   };
@@ -102,6 +105,12 @@ const Product = () => {
 
       <div className="row py-4">{loading ? <Loading /> : <ShowProduct />}</div>
     </div>
+    <div style={{marginTop:"50px"}}>
+
+    <Footer/>
+    </div>
+
+    
     </>
 
   );

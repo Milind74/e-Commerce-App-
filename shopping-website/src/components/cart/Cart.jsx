@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink,useNavigate } from "react-router-dom";
+import Footer from "../../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import { addCart, delCart } from "../redux/action";
 
@@ -88,7 +89,8 @@ console.log("added increment");
           <NavLink to ="/checkout" className="payment btn btn-outline-primary
           mb-5 w-25">Proceed to checkout</NavLink>
         </div >
-            <button  className="back backbtn btn btn-dark ms-2 py-2" onClick={handlegoback}>go back</button>
+            <button  className="back backbtn btn btn-dark ms-2 py-2 mb-5" onClick={handlegoback}>go back</button>
+
       </div>
     )
   }
@@ -97,6 +99,7 @@ console.log("added increment");
       {state.length === 0 && emptycart()}
       {state.length !== 0 && state.map(cartitems)}
       {state.length !== 0 && button()}
+      <Footer/>
 
     </>
   );

@@ -6,6 +6,7 @@ import "../../Style/Navbar.css";
 import styles from "../../Style/style.module.css"
 import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 import Modal from "@mui/material/Modal";
+import Footer from "../../Footer/Footer";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -235,6 +236,8 @@ const Products = () => {
           {loading ? <Loading /> : <ShowProducts />}
         </div>
       </div>
+      <Footer/>
+
     </div>
   );
 };

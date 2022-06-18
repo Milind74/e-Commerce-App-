@@ -1,12 +1,14 @@
 import React from 'react'
 import GooglePayButton from '@google-pay/button-react';
 import "../../Style/Navbar.css";
+import Footer from '../../Footer/Footer';
 
 
 const Pay = () => {
 
    
   return (
+    <>
     <div data-testid="parent" className='pay1' >
     <img   src="./pay1.gif" alt="" height="400" width="400" />
     <hr data-testid="hr" />
@@ -62,7 +64,10 @@ const Pay = () => {
         buttonColor='black'
         buttonType='Buy'
     />
+
   </div>
+  <Footer/>
+  </>
   )
 }
 

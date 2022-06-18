@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+  import "../../Style/Auth.css";
 
 const Home = () => {
 
@@ -81,7 +82,7 @@ const Home = () => {
     return (
         <>
             <div className="container mt-3">
-                <section className='d-flex justify-content-between'>
+                <section className='signupmaindiv d-flex justify-content-between'>
                     <div className="left_data mt-3 p-3" style={{ width: "100%" }}>
                         <h3 className='text-center col-lg-6'>Sign Up</h3>
                         <Form >

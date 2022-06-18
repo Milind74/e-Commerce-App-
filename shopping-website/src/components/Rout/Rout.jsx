@@ -11,6 +11,7 @@ import Contact from "../contact/Contact";
 import About from "../About";
 import Pay from "../payment/Pay";
 import Navbar from "../Navbar/Navbar";
+import Footer from "../../Footer/Footer";
 
 const Rout = () => {
   return (
@@ -30,7 +31,6 @@ const Rout = () => {
 
         <Route path="*" element={<Errror />} />
       </Routes>
-
     </>
   );
 };
