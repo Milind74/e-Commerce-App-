@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer__content">
         <div className="footer__col1">
           <img src="https://cdn.shopify.com/s/files/1/2028/6907/files/Ketnipz_Header_550x_dd3e502e-9e2e-4ad6-8c4d-e7cadd42b578_130x.gif?v=1592267404" alt="logo" width="80px" />
-          <select name="" id="">
+          <select name="" >
             <option value="au" label="Australia">
               Australia
             </option>
@@ -86,7 +86,7 @@ const Footer = () => {
           </select>
         </div>
         <div className="footer__col2">
-          <h4>Ketnipz</h4>
+          <h4 data-testid="logoname">Ketnipz</h4>
           <p>About us</p>
           <p>Careers</p>
           <p>Legal</p>
@@ -97,7 +97,7 @@ const Footer = () => {
           <p>Sustainability</p>
         </div>
         <div className="footer__col3">
-          <h4>Customer</h4>
+          <h4 data-testid="customerdata">Customer</h4>
           <p>Buy now pay later</p>
           <p>Contact us via app</p>
           <p>Customer service</p>
@@ -110,7 +110,7 @@ const Footer = () => {
         </div>
 
         <div className="footer__col4">
-          <h4>Business</h4>
+          <h4 data-testid="business">Business</h4>
           <p>Sell with Klarna</p>
           <p>Payment methods</p>
           <p>Platforms and partners</p>
@@ -128,7 +128,7 @@ const Footer = () => {
           arranged pursuant to a California Finance Lenders Law license.
         </p>
         <div>
-          <p>Legal</p>
+          <p data-testid="legal">Legal</p>
           <p>Term</p>
           <p>Privecy Policy</p>
           <p>Cookie</p>

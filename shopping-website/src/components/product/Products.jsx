@@ -106,7 +106,7 @@ const Products = () => {
   const ShowProducts = () => {
     return (
       <>
-        <div className="buttons d-flex justify-content-center mb-5 pb-5">
+        <div className=" buttons d-flex justify-content-center mb-5 pb-5">
           <button
             className="btn btn-outline-dark me-2"
             onClick={() => setFilter(data)}
@@ -232,7 +232,7 @@ const Products = () => {
             <hr />
           </div>
         </div>
-        <div className="row justify-content-center">
+        <div className="maindiv row justify-content-center">
           {loading ? <Loading /> : <ShowProducts />}
         </div>
       </div>
