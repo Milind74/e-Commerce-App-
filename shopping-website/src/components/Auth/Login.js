@@ -83,7 +83,7 @@ const Login = () => {
     return (
         <>
             <div className="container mt-3">
-                <section className='d-flex justify-content-between'>
+                <section className='d-flex flex-column flex-md-row align-items-center justify-content-between'>
                     <div className="left_data mt-3 p-3" style={{ width: "100%" }}>
                         <h3 data-testid="signin" className='text-center col-lg-6'>Sign IN</h3>
                         <Form >

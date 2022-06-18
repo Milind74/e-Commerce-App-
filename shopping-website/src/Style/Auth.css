@@ -1,3 +1,13 @@
 .signupmaindiv{
-    
+
 }
+
+
+
+
+@media screen and (max-width: 650px) {
+.signupmaindiv{
+display: grid;
+    }
+  }
+  

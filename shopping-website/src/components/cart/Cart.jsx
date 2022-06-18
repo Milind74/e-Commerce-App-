@@ -34,6 +34,7 @@ console.log("added increment");
 
   const cartitems = (cartitem) => {
     return (
+      <>
       <div className="px-4 my-5 bg-light-rounded-3 " key={cartitem.id}>
         <div className="container py-4 ">
           <button
@@ -66,12 +67,15 @@ console.log("added increment");
         </div>
         
       </div>
+      </>
     );
   };
 
   const emptycart = () => {
     return (
+
       <div className="px-4 my-5 bg-light-rounded-3 py-5 ">
+
         <div className="container py-4 ">
           <div className="row">
             <h3>your cart is empty</h3>
