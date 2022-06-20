@@ -206,3 +206,35 @@ input {
 
 }
 
+
+.mainContainer {
+  display: flex;
+  gap: 2%;
+  padding: 0 5%;
+}
+.mainContainer > div:nth-child(1) {
+  width: 25%;
+}
+.mainContainer > div:nth-child(1):hover {
+  filter: grayscale(0.5);
+  box-shadow: 0 0 0;
+  transition: 400ms;
+  /* cursor: pointer; */
+}
+.mainContainer > div:nth-child(2) {
+  width: 70%;
+}
+
+
+@media (max-width: 1000px) {
+  .mainContainer {
+    flex-direction: column;
+    
+  }
+  .mainContainer > div:nth-child(1) {
+    width: 100%;
+  }
+  .mainContainer > div:nth-child(2) {
+    width: 100%;
+  }
+}

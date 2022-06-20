@@ -35,7 +35,7 @@ const Login = () => {
 
     }
 
-    const addData = (e) => {
+     const addData = (e) => {
         e.preventDefault();
 
         const getuserArr = localStorage.getItem("usersignup");
