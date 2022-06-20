@@ -53,14 +53,14 @@ describe("login.jsx tests", () => {
        const emailinput=screen.getByPlaceholderText('username')
        const passwordinput=screen.getByPlaceholderText('password')
 
-fireEvent.click(submitBtn)
-expect(emailinput.value).toMatch("")
-expect(passwordinput.value).toMatch("")
+        fireEvent.click(submitBtn)
+        expect(emailinput.value).toMatch("")
+        expect(passwordinput.value).toMatch("")
 
     })
-
    
-
+   
+   
 
 
 
