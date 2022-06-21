@@ -3,7 +3,9 @@ import Contact from "../components/contact/Contact"
 import renderer from "react-test-renderer"
 import Footer from "../Footer/Footer"
 import Login from "../components/Auth/Login"
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter,Router } from "react-router-dom"
+import { createMemoryHistory } from 'history';
+
 import userEvent from "@testing-library/user-event"
 const testIds = {
     placeholder:"username",
@@ -57,6 +59,8 @@ describe("login.jsx tests", () => {
         expect(emailinput.value).toMatch("")
         expect(passwordinput.value).toMatch("")
 
+       
+
     })
    
    
@@ -64,6 +68,25 @@ describe("login.jsx tests", () => {
 
 
 
+    it('should pass', () => {
+        const history = createMemoryHistory({ initialEntries: ['/login'] });
+       render(
+          <BrowserRouter history={history}>
+
+            <Login />
+         </BrowserRouter> 
+        );
+        const email=screen.getByPlaceholderText('username')
+        userEvent.type(email,"abc@gmail.com")
+        const password=screen.getByPlaceholderText('password')
+        userEvent.type(password,"12345")
+
+        expect(history.location.pathname).toBe('/login');
+        fireEvent.click(screen.getByTestId('btn'));
+        
+        setTimeout(()=>{expect(history.location.pathname).toBe('/products')
+        },1000)
+      });
    
 
     

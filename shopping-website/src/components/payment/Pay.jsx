@@ -40,7 +40,7 @@ const Pay = () => {
           transactionInfo: {
             totalPriceStatus: 'FINAL',
             totalPriceLabel: 'Total',
-            totalPrice: '1',
+            totalPrice:   localStorage.getItem("total"),
             currencyCode: 'USD',
             countryCode: 'US',
           },
