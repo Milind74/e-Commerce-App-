@@ -56,11 +56,9 @@ describe("login.jsx tests", () => {
        const passwordinput=screen.getByPlaceholderText('password')
 
         fireEvent.click(submitBtn)
-        expect(emailinput.value).toMatch("")
+        
+expect(emailinput.value).toMatch("")
         expect(passwordinput.value).toMatch("")
-
-       
-
     })
    
    
@@ -83,12 +81,13 @@ describe("login.jsx tests", () => {
 
         expect(history.location.pathname).toBe('/login');
         fireEvent.click(screen.getByTestId('btn'));
+        screen.debug(undefined,50000)
         
         setTimeout(()=>{expect(history.location.pathname).toBe('/products')
         },1000)
       });
    
-
+   
     
 
    

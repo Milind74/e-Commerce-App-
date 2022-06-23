@@ -3,21 +3,22 @@ import Navbar from "../Navbar/Navbar";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 import "../../Style/Navbar.css";
-import styles from "../../Style/style.module.css"
+import styles from "../../Style/style.module.css";
 import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 import Modal from "@mui/material/Modal";
 import Footer from "../../Footer/Footer";
+import Button from 'react-bootstrap/Button'
 
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState(0);
-  const [searchedData, setSearchedData] = useState([])
-  const [showAll, setShowAll] = useState(false)
+  const [searchedData, setSearchedData] = useState([]);
+  const [showAll, setShowAll] = useState(false);
   const [open, setOpen] = useState(false); //hook for modal
   const [image1, setImage1] = useState(""); //hook for modal
-  
+
   let componentMounted = true;
   console.log("data", data);
   const images = [
@@ -35,7 +36,6 @@ const Products = () => {
     setImage(f);
   }
 
-
   //modal logic
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -44,29 +44,37 @@ const Products = () => {
     setImage1(loading);
     handleOpen();
   };
-  const handleicon=useRef(null)
+  const handleicon = useRef(null);
 
-  const icontoggle=()=>{
-    if(handleicon.current.style.color==="red"  ){
-   handleicon.current.style.color="white" 
-   console.log("milind");
-  }
-  else{
-    handleicon.current.style.color="red" 
-
-  }
-}
+  const icontoggle = () => {
+    if (handleicon.current.style.color === "red") {
+      handleicon.current.style.color = "white";
+      console.log("milind");
+    } else {
+      handleicon.current.style.color = "red";
+    }
+  };
 
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("http://localhost:3001/data");
-      if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
+      fetch("http://localhost:3001/data")
+      .then((response)=>{console.log("LINE 62",response); return response.json()})
+      .then((response)=>{
+        console.log("Aayush", response)
+        setData( response);
+        setFilter( response);
         setLoading(false);
-        console.log("filter=", filter);
-      }
+      })
+      // const response = await fetch("http://localhost:3001/data");
+
+      // if (componentMounted) {
+        
+      //   setData(await response.clone().json());
+      //   setFilter(await response.json());
+      //   setLoading(false);
+      //   console.log("filter=", filter);
+      // }
       return () => {
         componentMounted = false;
       };
@@ -74,19 +82,18 @@ const Products = () => {
     getProducts();
   }, []);
 
-  useEffect(()=>{
-    if(searchedData.length){
-    setFilter(searchedData)
-    }
-    else{
-      setFilter(data) 
+  useEffect(() => {
+    if (searchedData.length) {
+      setFilter(searchedData);
+    } else {
+      setFilter(data);
     }
     // console.log('ssssss',searchedData)
-  },[searchedData])
+  }, [searchedData]);
 
   const Loading = () => {
     return (
-      <>
+      <> 
         <div className="col-md-3">
           <Skeleton height={350} />
         </div>
@@ -138,7 +145,7 @@ const Products = () => {
             Electronic
           </button>
         </div>
-        { filter.map((product) => {
+        {filter.map((product) => {
           return (
             <>
               <div className=" productcard col-md-3 mb-4">
@@ -147,7 +154,6 @@ const Products = () => {
                   key={product.id}
                 >
                   <img
-                   
                     src={product.image}
                     onClick={() => {
                       handleimage(product.image);
@@ -160,7 +166,9 @@ const Products = () => {
                     <h5 className=" product_card__title card-title mb-0">
                       {product.title.substring(0, 12)}...
                     </h5>
-                    <p className=" product_card__price card-text lead fw-bold">${product.price}</p>
+                    <p className=" product_card__price card-text lead fw-bold">
+                      ${product.price}
+                    </p>
 
                     <div className="size">
                       <span className="span1">S</span>
@@ -169,31 +177,32 @@ const Products = () => {
                       <span className="span1">Xl</span>
                     </div>
                     <NavLink to={`/products/${product.id}`}>
-                      <button className=" backbtn btn btn-dark ms-2 py-2">
+                      <button type='button' data-testid="btn"  className=" backbtn btn btn-dark ms-2 py-2">
                         Buy Now
                       </button>
                     </NavLink>
-
                   </div>
                 </div>
               </div>
 
-             <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <div className={styles.modal}>
-          <div className={styles.loadingimg}>
-            <img src={image1} alt="loading"></img>
-          </div>
-          <div ref={handleicon} className={styles.icons}>
-            <i  onClick={()=>icontoggle()}  className="fas fa-heart"></i>
-          </div>
-        </div>
-      </Modal>
-    
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <div className={styles.modal}>
+                  <div className={styles.loadingimg}>
+                    <img src={image1} alt="loading"></img>
+                  </div>
+                  <div ref={handleicon} className={styles.icons}>
+                    <i
+                      onClick={() => icontoggle()}
+                      className="fas fa-heart"
+                    ></i>
+                  </div>
+                </div>
+              </Modal>
             </>
           );
         })}
@@ -202,9 +211,7 @@ const Products = () => {
   };
   return (
     <div>
-      <Navbar
-        setSearchedData={setSearchedData}
-      />
+      <Navbar setSearchedData={setSearchedData} />
 
       <div className="banner">
         <img src={images[image]} height="500" width="100%" alt="" />
@@ -229,10 +236,9 @@ const Products = () => {
         <div className="row">
           <div className="col-12 mb-5">
             <h1 className="display-6 fw-bolder text-center">
-
-            All deals and coupons.
+              All deals and coupons.
             </h1>
-            
+
             <hr />
           </div>
         </div>
@@ -240,8 +246,7 @@ const Products = () => {
           {loading ? <Loading /> : <ShowProducts />}
         </div>
       </div>
-      <Footer/>
-
+      <Footer />
     </div>
   );
 };
